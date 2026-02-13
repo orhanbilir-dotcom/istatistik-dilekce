@@ -3,64 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>İstatistik Bölümü | Çakışan Ders Dilekçe Aracı</title>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <title>İstatistik Bölümü | Çakışan Ders Dilekçesi</title>
     <link rel="stylesheet" href="style.css">
-    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 </head>
 <body>
-
     <div class="container">
         <header>
-            <div class="logo-placeholder">YTÜ</div>
             <h1>İSTATİSTİK BÖLÜM BAŞKANLIĞINA</h1>
-            <p class="subtitle">Çakışan Ders Kayıt Onay Formu</p>
+            <p>Çakışan Ders Dilekçe Oluşturma Aracı</p>
         </header>
 
         <div class="form-container">
             <div class="section">
-                <h3><span class="step-no">1</span> Öğrenci Bilgileri</h3>
-                <div class="input-group">
-                    <input type="text" id="adSoyad" placeholder="Adınız Soyadınız" required>
-                    <input type="text" id="ogrenciNo" placeholder="Öğrenci Numaranız" maxlength="9">
-                </div>
-                <div class="input-group">
-                    <input type="email" id="email" placeholder="E-posta Adresiniz">
-                    <input type="tel" id="tel" placeholder="Telefon (05xx...)" maxlength="11">
-                </div>
+                <h3>1. Öğrenci Bilgileri</h3>
+                <input type="text" id="adSoyad" placeholder="Ad Soyad" required>
+                <input type="text" id="ogrenciNo" placeholder="Öğrenci Numarası">
             </div>
 
             <div class="section">
-                <h3><span class="step-no">2</span> Ders Çakışma Detayları</h3>
-                
-                <div class="ders-box">
-                    <label for="ders1"><strong>OBS Üzerinde Kayıtlı Olduğunuz (Zorunlu) Ders:</strong></label>
-                    <select id="ders1" class="ders-select">
-                        <option value="">Lütfen listeden seçiniz...</option>
-                    </select>
-                </div>
+                <h3>2. Ders Seçimi</h3>
+                <label><strong>OBS Üzerinde Kayıtlı Olduğunuz (Zorunlu) Ders:</strong></label>
+                <select id="ders1" class="ders-select">
+                    <option value="">Seçiniz...</option>
+                </select>
 
-                <div class="ders-box">
-                    <label for="ders2"><strong>Çakıştığı İçin Almak İstediğiniz (Dilekçeye Konu) Ders:</strong></label>
-                    <select id="ders2" class="ders-select">
-                        <option value="">Lütfen listeden seçiniz...</option>
-                    </select>
-                </div>
+                <label><strong>Çakıştığı İçin Almak İstediğiniz Ders:</strong></label>
+                <select id="ders2" class="ders-select">
+                    <option value="">Seçiniz...</option>
+                </select>
             </div>
 
-            <div class="action-area">
-                <p class="warning-text">* Dilekçeyi oluşturmadan önce bilgilerin doğruluğunu kontrol ediniz.</p>
-                <button id="btnOlustur" onclick="dilekceOlustur()">
-                    <span class="icon">📄</span> Dilekçeyi Hazırla ve İndir (PDF)
-                </button>
-            </div>
+            <button onclick="dilekceOlustur()">PDF Oluştur ve İndir</button>
         </div>
-
-        <footer>
-            <p>© 2026 İstatistik Bölüm Sekreterliği Otomasyonu - Versiyon 1.1.8</p>
-        </footer>
+        <footer>© 2026 İstatistik Bölüm Sekreterliği | V1.1.9</footer>
     </div>
 
     <script src="script.js"></script>
