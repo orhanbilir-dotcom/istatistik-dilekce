@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dilekçe Oluşturucu v2.3.0</title>
+    <title>Dilekçe Oluşturucu v2.4.0</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 </head>
@@ -13,25 +13,35 @@
         
         <div class="form-group">
             <label>Adınız:</label>
-            <input type="text" id="ad" placeholder="Orhan">
+            <input type="text" id="ad" placeholder="Ad">
             
             <label>Soyadınız:</label>
-            <input type="text" id="soyad" placeholder="Bilir">
+            <input type="text" id="soyad" placeholder="Soyad">
             
             <label>Öğrenci Numarası:</label>
-            <input type="text" id="ogrenciNo" placeholder="21023001">
+            <input type="text" id="ogrenciNo" placeholder="Örn: 21023001">
             
             <label>E-posta:</label>
             <input type="email" id="eposta" placeholder="@std.yildiz.edu.tr">
             
             <label>Cep Telefonu:</label>
             <input type="text" id="telefon">
-            
+
+            <hr>
+
             <label>OBS Üzerinden Seçtiğim Ders:</label>
-            <input type="text" id="obsDers" list="dersListesi" placeholder="Yazmaya başlayınca dersler çıkar...">
+            <select id="obsDersSelect" onchange="toggleManualInput('obs')">
+                <option value="">Seçiniz...</option>
+                <option value="DIGER">DİĞER (LİSTEDE YOK)</option>
+            </select>
+            <input type="text" id="obsDersManual" style="display:none; margin-top:5px;" placeholder="Ders Kodunu ve Adını Yazınız">
             
             <label>FYK Kararı ile Eklenecek Ders:</label>
-            <input type="text" id="fykDers" list="dersListesi" placeholder="Yazmaya başlayınca dersler çıkar...">
+            <select id="fykDersSelect" onchange="toggleManualInput('fyk')">
+                <option value="">Seçiniz...</option>
+                <option value="DIGER">DİĞER (LİSTEDE YOK)</option>
+            </select>
+            <input type="text" id="fykDersManual" style="display:none; margin-top:5px;" placeholder="Ders Kodunu ve Adını Yazınız">
             
             <label>Dersin Grubu:</label>
             <input type="text" id="dersGrup">
@@ -40,7 +50,7 @@
             <input type="text" id="toplamKredi">
             
             <label>Derslerin Gün ve Saati:</label>
-            <input type="text" id="gunSaat" placeholder="PAZARTESİ 09:00">
+            <input type="text" id="gunSaat" placeholder="PERŞEMBE 15:00-16:00">
             
             <label>Bölüm Seçiniz:</label>
             <select id="bolum">
@@ -50,19 +60,6 @@
         </div>
 
         <button onclick="dilekceOlustur()">Dilekçeyi Oluştur ve İndir</button>
-        
-        <datalist id="dersListesi">
-            <option value="IST1012 - Python ile Programlama">
-            <option value="IST1132 - Olasılık">
-            <option value="IST1142 - İstatistik">
-            <option value="IST2022 - Matematiksel İstatistik">
-            <option value="IST3110 - R ile İstatistik Uygulamaları">
-            <option value="MAT1002 - Matematik 2">
-            <option value="TDB1032 - TÜRKÇE 2">
-            <option value="FEF3001 - Yapay Zekaya Giriş">
-            <option value="IST4130 - WEB Programlama">
-            <option value="BED3011 - Basketbol Temel Teknik Eğitimi">
-            </datalist>
     </div>
     <script src="script.js"></script>
 </body>
