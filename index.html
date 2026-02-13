@@ -3,42 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>İstatistik Bölümü | Çakışan Ders Dilekçesi</title>
+    <title>Çakışan Ders Alma Dilekçesi Oluşturma v2.2.0</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.25/jspdf.plugin.autotable.min.js"></script>
 </head>
 <body>
     <div class="container">
-        <header>
-            <h1>İSTATİSTİK BÖLÜM BAŞKANLIĞINA</h1>
-            <p>Çakışan Ders Dilekçe Oluşturma Aracı</p>
-        </header>
-
-        <div class="form-container">
-            <div class="section">
-                <h3>1. Öğrenci Bilgileri</h3>
-                <input type="text" id="adSoyad" placeholder="Ad Soyad" required>
-                <input type="text" id="ogrenciNo" placeholder="Öğrenci Numarası">
-            </div>
-
-            <div class="section">
-                <h3>2. Ders Seçimi</h3>
-                <label><strong>OBS Üzerinde Kayıtlı Olduğunuz (Zorunlu) Ders:</strong></label>
-                <select id="ders1" class="ders-select">
-                    <option value="">Seçiniz...</option>
-                </select>
-
-                <label><strong>Çakıştığı İçin Almak İstediğiniz Ders:</strong></label>
-                <select id="ders2" class="ders-select">
-                    <option value="">Seçiniz...</option>
-                </select>
-            </div>
-
-            <button onclick="dilekceOlustur()">PDF Oluştur ve İndir</button>
+        <h2>Çakışan Ders Alma Dilekçesi Oluşturma</h2>
+        
+        <div class="form-group">
+            <label>Adınız:</label>
+            <input type="text" id="ad" placeholder="Örn: Orhan">
+            
+            <label>Soyadınız:</label>
+            <input type="text" id="soyad" placeholder="Örn: Bilir">
+            
+            <label>Öğrenci Numarası:</label>
+            <input type="text" id="ogrenciNo" placeholder="Örn: 21023001">
+            
+            <label>E-posta:</label>
+            <input type="email" id="eposta" placeholder="@std.yildiz.edu.tr uzantılı e-posta adresinizi yazınız">
+            
+            <label>Cep Telefonu:</label>
+            <input type="text" id="telefon" placeholder="05XX XXX XX XX">
+            
+            <label>OBS Üzerinden Seçtiğim Dersin Kodu-Adı:</label>
+            <input type="text" id="obsDers" list="dersDatalist" placeholder="Ders seçin veya yazın...">
+            
+            <label>FYK Kararı ile Eklenecek Dersin Kodu-Adı:</label>
+            <input type="text" id="fykDers" list="dersDatalist" placeholder="Ders seçin veya yazın...">
+            
+            <label>Eklemek istediğim Dersin Grubu:</label>
+            <input type="text" id="dersGrup" placeholder="Örn: 1">
+            
+            <label>Eklenecek Ders Dahil BAHAR Yarıyılında Alınan Toplam Kredi:</label>
+            <input type="text" id="toplamKredi" placeholder="Örn: 24">
+            
+            <label>Derslerin Çakıştığı Gün ve Saat Bilgisi:</label>
+            <input type="text" id="gunSaat" placeholder="Örn: PERŞEMBE 15:00-16:00">
+            
+            <label>Bölüm Seçiniz:</label>
+            <select id="bolum">
+                <option value="İSTATİSTİK">İSTATİSTİK</option>
+                <option value="MATEMATİK">MATEMATİK</option>
+            </select>
         </div>
-        <footer>© 2026 İstatistik Bölüm Sekreterliği | V1.1.9</footer>
-    </div>
 
+        <button onclick="dilekceOlustur()">Dilekçeyi Oluştur</button>
+        
+        <datalist id="dersDatalist"></datalist>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>
