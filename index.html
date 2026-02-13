@@ -3,10 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Çakışan Ders Alma Dilekçesi Oluşturma v2.2.0</title>
+    <title>Dilekçe Oluşturucu v2.3.0</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.25/jspdf.plugin.autotable.min.js"></script>
 </head>
 <body>
     <div class="container">
@@ -14,34 +13,34 @@
         
         <div class="form-group">
             <label>Adınız:</label>
-            <input type="text" id="ad" placeholder="Örn: Orhan">
+            <input type="text" id="ad" placeholder="Orhan">
             
             <label>Soyadınız:</label>
-            <input type="text" id="soyad" placeholder="Örn: Bilir">
+            <input type="text" id="soyad" placeholder="Bilir">
             
             <label>Öğrenci Numarası:</label>
-            <input type="text" id="ogrenciNo" placeholder="Örn: 21023001">
+            <input type="text" id="ogrenciNo" placeholder="21023001">
             
             <label>E-posta:</label>
-            <input type="email" id="eposta" placeholder="@std.yildiz.edu.tr uzantılı e-posta adresinizi yazınız">
+            <input type="email" id="eposta" placeholder="@std.yildiz.edu.tr">
             
             <label>Cep Telefonu:</label>
-            <input type="text" id="telefon" placeholder="05XX XXX XX XX">
+            <input type="text" id="telefon">
             
-            <label>OBS Üzerinden Seçtiğim Dersin Kodu-Adı:</label>
-            <input type="text" id="obsDers" list="dersDatalist" placeholder="Ders seçin veya yazın...">
+            <label>OBS Üzerinden Seçtiğim Ders:</label>
+            <input type="text" id="obsDers" list="dersListesi" placeholder="Yazmaya başlayınca dersler çıkar...">
             
-            <label>FYK Kararı ile Eklenecek Dersin Kodu-Adı:</label>
-            <input type="text" id="fykDers" list="dersDatalist" placeholder="Ders seçin veya yazın...">
+            <label>FYK Kararı ile Eklenecek Ders:</label>
+            <input type="text" id="fykDers" list="dersListesi" placeholder="Yazmaya başlayınca dersler çıkar...">
             
-            <label>Eklemek istediğim Dersin Grubu:</label>
-            <input type="text" id="dersGrup" placeholder="Örn: 1">
+            <label>Dersin Grubu:</label>
+            <input type="text" id="dersGrup">
             
-            <label>Eklenecek Ders Dahil BAHAR Yarıyılında Alınan Toplam Kredi:</label>
-            <input type="text" id="toplamKredi" placeholder="Örn: 24">
+            <label>Toplam Kredi:</label>
+            <input type="text" id="toplamKredi">
             
-            <label>Derslerin Çakıştığı Gün ve Saat Bilgisi:</label>
-            <input type="text" id="gunSaat" placeholder="Örn: PERŞEMBE 15:00-16:00">
+            <label>Derslerin Gün ve Saati:</label>
+            <input type="text" id="gunSaat" placeholder="PAZARTESİ 09:00">
             
             <label>Bölüm Seçiniz:</label>
             <select id="bolum">
@@ -50,9 +49,20 @@
             </select>
         </div>
 
-        <button onclick="dilekceOlustur()">Dilekçeyi Oluştur</button>
+        <button onclick="dilekceOlustur()">Dilekçeyi Oluştur ve İndir</button>
         
-        <datalist id="dersDatalist"></datalist>
+        <datalist id="dersListesi">
+            <option value="IST1012 - Python ile Programlama">
+            <option value="IST1132 - Olasılık">
+            <option value="IST1142 - İstatistik">
+            <option value="IST2022 - Matematiksel İstatistik">
+            <option value="IST3110 - R ile İstatistik Uygulamaları">
+            <option value="MAT1002 - Matematik 2">
+            <option value="TDB1032 - TÜRKÇE 2">
+            <option value="FEF3001 - Yapay Zekaya Giriş">
+            <option value="IST4130 - WEB Programlama">
+            <option value="BED3011 - Basketbol Temel Teknik Eğitimi">
+            </datalist>
     </div>
     <script src="script.js"></script>
 </body>
